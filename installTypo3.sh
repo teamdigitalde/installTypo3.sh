@@ -172,6 +172,7 @@ return [
     'FE' => [
         'debug' => false,
         'loginSecurityLevel' => 'rsa',
+        'pageNotFound_handling' => 'USER_FUNCTION:typo3conf/ext/sitepackage/Resources/Private/Php/pageNotFound.php:user_pageNotFound->pageNotFound',
     ],
     'GFX' => [
         'jpg_quality' => '80',
