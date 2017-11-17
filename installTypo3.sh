@@ -122,11 +122,13 @@ cd typo3conf
 touch LocalConfiguration.php
 db=datenbankname
 du=datenbankuser
+dh=Hostname
 dp=datenbankpasswort
 installPasswort='$P$CAMstFeZNWquvENdiz4fxuKMY21hVL0'
 touch LocalConfiguration.php
 read -p 'Datenbankname: ' db
 read -p 'Datenbankuser: ' du
+read -p 'Hostname: ' dh
 read -p 'Datenbankpasswort: ' dp
 printf "
 <?php
@@ -143,7 +145,7 @@ return [
                 'charset' => 'utf8',
                 'dbname' => '"$db"',
                 'driver' => 'mysqli',
-                'host' => '127.0.0.3',
+                'host' => '"$dh"',
                 'password' => '"$dp"',
                 'port' => 3306,
                 'user' => '"$du"',
@@ -377,7 +379,7 @@ cd sitepackage
 git init > /dev/null
 git pull https://github.com/teamdigitalde/TYPO3_EXT_Skeleton > /dev/null 2>&1
 
-mysql -u $du -p$dp --default_character_set utf8 -h 127.0.0.3 $db < kickstart.sql
+mysql -u $du -p$dp --default_character_set utf8 -h $dh $db < kickstart.sql
 
 cd ../
 mkdir gridelements
