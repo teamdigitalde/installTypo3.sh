@@ -13,6 +13,9 @@ wget $url -O $target --no-check-certificate > /dev/null 2>&1
 tar -xzf $target > /dev/null
 # remove tar ball
 rm -f $target
+
+# delete typo3
+rm -rf typo3
 # make typo3 directory
 mkdir typo3
 # rename sources directory
@@ -33,14 +36,14 @@ RewriteRule ^.*(\.sql)$ - [F]' >> typo3/.htaccess
 printf '
 <IfModule mod_rewrite.c>
 # rewrite non-www on HTTP connection
-RewriteCond %%{HTTPS} off
-RewriteCond %%{HTTP_HOST} !^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://www.%%{HTTP_HOST}/$1 [R=301,L]
+#RewriteCond %%{HTTPS} off
+#RewriteCond %%{HTTP_HOST} !^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://www.%%{HTTP_HOST}/$1 [R=301,L]
 
 # rewrite non-www on HTTPS connection
-RewriteCond %%{HTTPS} on
-RewriteCond %%{HTTP_HOST} !^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://www.%%{HTTP_HOST}/$1 [R=301,L]
+#RewriteCond %%{HTTPS} on
+#RewriteCond %%{HTTP_HOST} !^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ https://www.%%{HTTP_HOST}/$1 [R=301,L]
 
 # rewrite dd_googlesitemap
 RewriteRule ^sitemap.xml$ /index.php?eID=dd_googlesitemap [L]
