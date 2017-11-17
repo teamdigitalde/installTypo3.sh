@@ -223,6 +223,7 @@ return [
 ];
 
 " >> LocalConfiguration.php
+
 touch PackageStates.php
 printf "
 <?php
