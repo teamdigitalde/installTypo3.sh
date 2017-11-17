@@ -78,10 +78,10 @@ RewriteRule ^sitemap.xml$ /index.php?eID=dd_googlesitemap [L]
 #basic access-restriction (beta/seite;)
 printf "
 # basic access-restriction (beta/seite;)
-AuthName 'Geschützter Bereich'
-AuthType Basic
-AuthUserFile ${workingdirectory}/.htpasswd
-require valid-user" >> typo3/.htaccess
+#AuthName 'Geschützter Bereich'
+#AuthType Basic
+#AuthUserFile ${workingdirectory}/.htpasswd
+#require valid-user" >> typo3/.htaccess
 
 #htpasswd
 printf 'beta:$1$$.OPcLRctp0tpQ81Db9tKP/' >> .htpasswd
