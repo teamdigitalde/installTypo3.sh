@@ -384,6 +384,7 @@ git init > /dev/null
 git pull https://github.com/teamdigitalde/TYPO3_EXT_Skeleton > /dev/null 2>&1
 
 mysql -u $du -p$dp --default_character_set utf8 -h $dh $db < kickstart.sql
+rm -rf kickstart.sql
 
 cd ../
 mkdir gridelements
