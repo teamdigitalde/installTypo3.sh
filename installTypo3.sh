@@ -111,9 +111,6 @@ mkdir typo3conf
 ln -s ../typo3_src/ typo3_src
 ln -s typo3_src/typo3 typo3
 
-#create empty FIRST_INSTALL file
-touch FIRST_INSTALL
-
 #create a git repository
 git init > /dev/null
 
