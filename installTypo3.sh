@@ -401,6 +401,12 @@ cd realurl
 git init > /dev/null
 git pull https://github.com/dmitryd/typo3-realurl > /dev/null 2>&1
 
+cd ../
+mkdir rte_ckeditor_image
+cd rte_ckeditor_image
+git init > /dev/null
+git pull https://github.com/netresearch/t3x-rte_ckeditor_image > /dev/null 2>&1
+
 echo " "
 echo "Done. Feel free to buy me a Beer :-)"
 echo " "
