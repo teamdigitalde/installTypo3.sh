@@ -271,6 +271,9 @@ return [
         'rte_ckeditor' => [
             'packagePath' => 'typo3/sysext/rte_ckeditor/',
         ],
+        'rte_ckeditor_image' => [
+            'packagePath' => 'typo3conf/ext/rte_ckeditor_image/',
+        ],
         'rsaauth' => [
             'packagePath' => 'typo3/sysext/rsaauth/',
         ],
