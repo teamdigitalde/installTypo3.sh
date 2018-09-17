@@ -35,6 +35,10 @@ RewriteRule ^.*(\.sql)$ - [F]' >> typo3/.htaccess
 #add Apache-Tuning to htaccess
 printf '
 <IfModule mod_rewrite.c>
+
+# Php Version Einstellung für dieses eine Verzeichnis
+#AddType application/x-httpd-php7 .php
+
 # rewrite non-www on HTTP connection
 #RewriteCond %%{HTTPS} off
 #RewriteCond %%{HTTP_HOST} !^www\.(.*)$ [NC]
