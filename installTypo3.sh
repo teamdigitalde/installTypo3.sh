@@ -96,10 +96,8 @@ cd typo3/
 #create index.php
 #ln -s typo3_src/index.php index.php
 touch index.php
-printf "
-<?php
-require __DIR__ . '/typo3/sysext/frontend/Resources/Private/Php/frontend.php';
-;" >> index.php
+printf "<?php
+require __DIR__ . '/typo3/sysext/frontend/Resources/Private/Php/frontend.php';" >> index.php
 
 #create fileadmin, user_upload and typo3conf
 mkdir fileadmin
