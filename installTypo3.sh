@@ -313,6 +313,9 @@ return [
         'documentation' => [
             'packagePath' => 'typo3/sysext/documentation/',
         ],
+        'bootstrapslider' => [
+            'packagePath' => 'typo3conf/ext/bootstrapslider/',
+        ],
         'felogin' => [
             'packagePath' => 'typo3/sysext/felogin/',
         ],
