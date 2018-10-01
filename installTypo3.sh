@@ -391,10 +391,14 @@ cd sitepackage
 git init > /dev/null
 git pull https://github.com/teamdigitalde/sitepackage > /dev/null 2>&1
 
+cd ../
+
 mkdir bootstrapslider
 cd bootstrapslider
 git init > /dev/null
 git pull https://github.com/teamdigitalde/bootstrapslider > /dev/null 2>&1
+
+cd ../
 
 mysql -u $du -p$dp --default_character_set utf8 -h $dh $db < kickstart.sql
 rm -rf kickstart.sql
