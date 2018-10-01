@@ -422,6 +422,12 @@ git init > /dev/null
 git pull https://github.com/dmitryd/typo3-realurl > /dev/null 2>&1
 
 cd ../
+mkdir dce
+cd dce
+git init > /dev/null
+git pull https://bitbucket.org/ArminVieweg/dce/src > /dev/null 2>&1
+
+cd ../
 mkdir rte_ckeditor_image
 cd rte_ckeditor_image
 git init > /dev/null
