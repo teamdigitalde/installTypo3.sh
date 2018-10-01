@@ -403,6 +403,12 @@ git init > /dev/null
 git pull https://github.com/TYPO3-extensions/gridelements > /dev/null 2>&1
 
 cd ../
+mkdir rte_ckeditor_image
+cd rte_ckeditor_image
+git init > /dev/null
+git pull https://github.com/netresearch/t3x-rte_ckeditor_image > /dev/null 2>&1
+
+cd ../
 mkdir dd_googlesitemap
 cd dd_googlesitemap
 git init > /dev/null
