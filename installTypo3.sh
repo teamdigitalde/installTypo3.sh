@@ -340,6 +340,9 @@ return [
         'reports' => [
             'packagePath' => 'typo3/sysext/reports/',
         ],
+        'rte_ckeditor_image' => [
+            'packagePath' => 'typo3conf/ext/rte_ckeditor_image/',
+        ],
         'scheduler' => [
             'packagePath' => 'typo3/sysext/scheduler/',
         ],
