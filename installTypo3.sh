@@ -156,7 +156,6 @@ return [
     ],
     'EXT' => [
         'extConf' => [
-            'dd_googlesitemap' => 'a:0:{}',
             'filemetadata' => 'a:0:{}',
             'gridelements' => 'a:2:{s:20:"additionalStylesheet";s:0:"";s:19:"nestingInListModule";s:1:"0";}',
             'realurl' => 'a:6:{s:10:"configFile";s:64:"typo3conf/ext/sitepackage/Resources/Private/Php/realurl_conf.php";s:14:"enableAutoConf";s:1:"1";s:14:"autoConfFormat";s:1:"0";s:17:"segTitleFieldList";s:0:"";s:12:"enableDevLog";s:1:"0";s:10:"moduleIcon";s:1:"0";}',
@@ -364,9 +363,6 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
-        'dd_googlesitemap' => [
-            'packagePath' => 'typo3conf/ext/dd_googlesitemap/',
-        ],
         'gridelements' => [
             'packagePath' => 'typo3conf/ext/gridelements/',
         ],
@@ -408,12 +404,6 @@ mkdir gridelements
 cd gridelements
 git init > /dev/null
 git pull https://github.com/TYPO3-extensions/gridelements > /dev/null 2>&1
-
-cd ../
-mkdir dd_googlesitemap
-cd dd_googlesitemap
-git init > /dev/null
-git pull https://github.com/dmitryd/typo3-dd_googlesitemap > /dev/null 2>&1
 
 cd ../
 mkdir realurl
