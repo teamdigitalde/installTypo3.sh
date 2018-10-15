@@ -21,17 +21,6 @@ mkdir typo3
 # rename sources directory
 mv typo3_src-* typo3_src
 
-#copy .htaccess
-#cp typo3_src/_.htaccess typo3/.htaccess
-
-#basic access-restriction (beta/seite;)
-printf "
-# basic access-restriction (beta/seite;)
-AuthName 'Geschützter Bereich'
-AuthType Basic
-AuthUserFile ${workingdirectory}/.htpasswd
-require valid-user" >> typo3/.htaccess
-
 #htpasswd
 printf 'beta:$1$$.OPcLRctp0tpQ81Db9tKP/' >> .htpasswd
 
@@ -322,6 +311,20 @@ mkdir sitepackage
 cd sitepackage
 git init > /dev/null
 git pull https://github.com/teamdigitalde/sitepackage > /dev/null 2>&1
+
+#copy .htaccess
+#cp typo3_src/_.htaccess typo3/.htaccess
+
+#basic access-restriction (beta/seite;)
+printf "
+# basic access-restriction (beta/seite;)
+AuthName 'Geschützter Bereich'
+AuthType Basic
+AuthUserFile ${workingdirectory}/.htpasswd
+require valid-user" >> .htaccess
+
+mv .htaccess ../../..
+mv index.php ../../..
 
 mysql -u $du -p$dp --default_character_set utf8 -h $dh $db < kickstart.sql
 rm -rf kickstart.sql
