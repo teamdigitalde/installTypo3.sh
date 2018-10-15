@@ -294,6 +294,9 @@ return [
         'gridelements' => [
             'packagePath' => 'typo3conf/ext/gridelements/',
         ],
+        'dce' => [
+            'packagePath' => 'typo3conf/ext/dce/',
+        ],
         'sitepackage' => [
             'packagePath' => 'typo3conf/ext/sitepackage/',
         ],
@@ -325,6 +328,7 @@ require valid-user" >> .htaccess
 
 mv .htaccess ../../..
 mv index.php ../../..
+mv autoload ../..
 
 mysql -u $du -p$dp --default_character_set utf8 -h $dh $db < kickstart.sql
 rm -rf kickstart.sql
