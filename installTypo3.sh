@@ -64,10 +64,14 @@ printf "
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => '',
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '"$installPasswort"',
+        'installToolPassword' => '$P$CAMstFeZNWquvENdiz4fxuKMY21hVL0',
         'loginSecurityLevel' => 'rsa',
+        'passwordHashing' => [
+            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\BcryptPasswordHash',
+            'options' => [],
+        ],
     ],
     'DB' => [
         'Connections' => [
@@ -84,13 +88,12 @@ return [
     ],
     'EXT' => [
         'extConf' => [
-            'filemetadata' => 'a:0:{}',
-            'gridelements' => 'a:2:{s:20:"additionalStylesheet";s:0:"";s:19:"nestingInListModule";s:1:"0";}',
-            'realurl' => 'a:6:{s:10:"configFile";s:64:"typo3conf/ext/sitepackage/Resources/Private/Php/realurl_conf.php";s:14:"enableAutoConf";s:1:"1";s:14:"autoConfFormat";s:1:"0";s:17:"segTitleFieldList";s:0:"";s:12:"enableDevLog";s:1:"0";s:10:"moduleIcon";s:1:"0";}',
+            'backend' => 'a:6:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:11:"backendLogo";s:0:"";s:14:"backendFavicon";s:0:"";}',
+            'dce' => 'a:3:{s:29:"disableAutoClearFrontendCache";s:1:"1";s:17:"disableCodemirror";s:1:"0";s:17:"enableUpdateCheck";s:1:"0";}',
+            'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
+            'flux' => 'a:3:{s:9:"debugMode";s:1:"0";s:7:"compact";s:1:"0";s:12:"handleErrors";s:1:"0";}',
             'rsaauth' => 'a:1:{s:18:"temporaryDirectory";s:0:"";}',
-            'saltedpasswords' => 'a:2:{s:3:"BE.";a:4:{s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\Pbkdf2Salt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}s:3:"FE.";a:5:{s:7:"enabled";i:1;s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\Pbkdf2Salt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}}',
-            'sitepackage' => 'a:0:{}',
-            'bootstrapslider' => 'a:0:{}',
+            'scheduler' => 'a:2:{s:11:"maxLifetime";s:4:"1440";s:15:"showSampleTasks";s:1:"1";}',
         ],
     ],
     'EXTCONF' => [
@@ -100,8 +103,39 @@ return [
             ],
         ],
     ],
+    'EXTENSIONS' => [
+        'backend' => [
+            'backendFavicon' => '',
+            'backendLogo' => '',
+            'loginBackgroundImage' => '',
+            'loginFootnote' => '',
+            'loginHighlightColor' => '',
+            'loginLogo' => '',
+        ],
+        'dce' => [
+            'disableAutoClearFrontendCache' => '1',
+            'disableCodemirror' => '0',
+            'enableUpdateCheck' => '0',
+        ],
+        'extensionmanager' => [
+            'automaticInstallation' => '1',
+            'offlineMode' => '0',
+        ],
+        'flux' => [
+            'compact' => '0',
+            'debugMode' => '0',
+            'handleErrors' => '0',
+        ],
+        'rsaauth' => [
+            'temporaryDirectory' => '',
+        ],
+        'scheduler' => [
+            'maxLifetime' => '1440',
+            'showSampleTasks' => '1',
+        ],
+    ],
     'FE' => [
-        'debug' => true,
+        'debug' => '1',
         'loginSecurityLevel' => 'rsa',
         'pageNotFound_handling' => 'USER_FUNCTION:typo3conf/ext/sitepackage/Resources/Private/Php/pageNotFound.php:user_pageNotFound->pageNotFound',
         'passwordHashing' => [
@@ -114,7 +148,7 @@ return [
         'processor' => 'GraphicsMagick',
         'processor_allowTemporaryMasksAsPng' => false,
         'processor_colorspace' => 'RGB',
-        'processor_effects' => -1,
+        'processor_effects' => false,
         'processor_enabled' => true,
         'processor_path' => '/usr/bin/',
         'processor_path_lzw' => '/usr/bin/',
@@ -128,6 +162,7 @@ return [
         'transport_smtp_username' => '',
     ],
     'SYS' => [
+        'SYS' => [
         'caching' => [
             'cacheConfigurations' => [
                 'extbase_object' => [
@@ -143,15 +178,11 @@ return [
             ],
         ],
         'devIPmask' => '',
-        'displayErrors' => 0,
-        'enableDeprecationLog' => false,
+        'displayErrors' => '0',
         'encryptionKey' => '5ad2b220f239fd6aeb5615444010fd3ce1d110f6de9c5df917cdbf1c8ca8349034fa2c06272ab77b755f006c88a23187',
-        'exceptionalErrors' => 20480,
-        'isInitialDatabaseImportDone' => true,
-        'isInitialInstallationInProgress' => false,
+        'exceptionalErrors' => 4096,
         'sitename' => 'New TYPO3 site',
-        'sqlDebug' => 0,
-        'systemLogLevel' => 2,
+        'systemLogLevel' => '2',
     ],
 ];
 
