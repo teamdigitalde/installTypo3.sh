@@ -157,7 +157,6 @@ return [
         'transport_smtp_username' => '',
     ],
     'SYS' => [
-        'SYS' => [
         'caching' => [
             'cacheConfigurations' => [
                 'extbase_object' => [
