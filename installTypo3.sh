@@ -326,6 +326,9 @@ return [
         'flux' => [
             'packagePath' => 'typo3conf/ext/flux/',
         ],
+        'vhs' => [
+            'packagePath' => 'typo3conf/ext/vhs/',
+        ],
         'dce' => [
             'packagePath' => 'typo3conf/ext/dce/',
         ],
@@ -376,6 +379,12 @@ mkdir flux
 cd flux
 git init > /dev/null
 git pull https://github.com/FluidTYPO3/flux > /dev/null 2>&1
+
+cd ../
+mkdir vhs
+cd vhs
+git init > /dev/null
+git pull https://github.com/FluidTYPO3/vhs > /dev/null 2>&1
 
 cd ../
 mkdir dce
