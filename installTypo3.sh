@@ -64,9 +64,9 @@ printf "
 <?php
 return [
     'BE' => [
-        'debug' => '',
+        'debug' => true,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '"$installPasswort"',
+        'installToolPassword' => '$P$CAMstFeZNWquvENdiz4fxuKMY21hVL0',
         'loginSecurityLevel' => 'rsa',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\BcryptPasswordHash',
@@ -88,7 +88,11 @@ return [
     ],
     'EXT' => [
         'extConf' => [
-
+            'backend' => 'a:6:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:11:"backendLogo";s:0:"";s:14:"backendFavicon";s:0:"";}',
+            'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
+            'flux' => 'a:3:{s:9:"debugMode";s:1:"0";s:7:"compact";s:1:"0";s:12:"handleErrors";s:1:"0";}',
+            'rsaauth' => 'a:1:{s:18:"temporaryDirectory";s:0:"";}',
+            'scheduler' => 'a:2:{s:11:"maxLifetime";s:4:"1440";s:15:"showSampleTasks";s:1:"1";}',
         ],
     ],
     'EXTCONF' => [
@@ -106,11 +110,6 @@ return [
             'loginFootnote' => '',
             'loginHighlightColor' => '',
             'loginLogo' => '',
-        ],
-        'dce' => [
-            'disableAutoClearFrontendCache' => '1',
-            'disableCodemirror' => '0',
-            'enableUpdateCheck' => '0',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
@@ -130,7 +129,7 @@ return [
         ],
     ],
     'FE' => [
-        'debug' => '1',
+        'debug' => true,
         'loginSecurityLevel' => 'rsa',
         'pageNotFound_handling' => 'USER_FUNCTION:typo3conf/ext/sitepackage/Resources/Private/Php/pageNotFound.php:user_pageNotFound->pageNotFound',
         'passwordHashing' => [
@@ -171,15 +170,14 @@ return [
                 ],
             ],
         ],
-        'devIPmask' => '',
-        'displayErrors' => '0',
+        'devIPmask' => '*',
+        'displayErrors' => 1,
         'encryptionKey' => '5ad2b220f239fd6aeb5615444010fd3ce1d110f6de9c5df917cdbf1c8ca8349034fa2c06272ab77b755f006c88a23187',
-        'exceptionalErrors' => 4096,
+        'exceptionalErrors' => 12290,
         'sitename' => 'New TYPO3 site',
-        'systemLogLevel' => '2',
+        'systemLogLevel' => 0,
     ],
 ];
-
 " >> LocalConfiguration.php
 
 touch PackageStates.php
@@ -197,14 +195,14 @@ return [
         'core' => [
             'packagePath' => 'typo3/sysext/core/',
         ],
+        'scheduler' => [
+            'packagePath' => 'typo3/sysext/scheduler/',
+        ],
         'extbase' => [
             'packagePath' => 'typo3/sysext/extbase/',
         ],
         'fluid' => [
             'packagePath' => 'typo3/sysext/fluid/',
-        ],
-        'install' => [
-            'packagePath' => 'typo3/sysext/install/',
         ],
         'frontend' => [
             'packagePath' => 'typo3/sysext/frontend/',
@@ -212,17 +210,20 @@ return [
         'fluid_styled_content' => [
             'packagePath' => 'typo3/sysext/fluid_styled_content/',
         ],
-        'info' => [
-            'packagePath' => 'typo3/sysext/info/',
+        'install' => [
+            'packagePath' => 'typo3/sysext/install/',
         ],
-        'info_pagetsconfig' => [
-            'packagePath' => 'typo3/sysext/info_pagetsconfig/',
+        'recordlist' => [
+            'packagePath' => 'typo3/sysext/recordlist/',
         ],
-        'extensionmanager' => [
-            'packagePath' => 'typo3/sysext/extensionmanager/',
+        'backend' => [
+            'packagePath' => 'typo3/sysext/backend/',
         ],
-        'lang' => [
-            'packagePath' => 'typo3/sysext/lang/',
+        'recycler' => [
+            'packagePath' => 'typo3/sysext/recycler/',
+        ],
+        'reports' => [
+            'packagePath' => 'typo3/sysext/reports/',
         ],
         'setup' => [
             'packagePath' => 'typo3/sysext/setup/',
@@ -230,29 +231,8 @@ return [
         'rte_ckeditor' => [
             'packagePath' => 'typo3/sysext/rte_ckeditor/',
         ],
-        'rte_ckeditor_image' => [
-            'packagePath' => 'typo3conf/ext/rte_ckeditor_image/',
-        ],
-        'rsaauth' => [
-            'packagePath' => 'typo3/sysext/rsaauth/',
-        ],
-        'saltedpasswords' => [
-            'packagePath' => 'typo3/sysext/saltedpasswords/',
-        ],
-        'func' => [
-            'packagePath' => 'typo3/sysext/func/',
-        ],
-        'wizard_crpages' => [
-            'packagePath' => 'typo3/sysext/wizard_crpages/',
-        ],
-        'wizard_sortpages' => [
-            'packagePath' => 'typo3/sysext/wizard_sortpages/',
-        ],
         'about' => [
             'packagePath' => 'typo3/sysext/about/',
-        ],
-        'backend' => [
-            'packagePath' => 'typo3/sysext/backend/',
         ],
         'belog' => [
             'packagePath' => 'typo3/sysext/belog/',
@@ -260,17 +240,8 @@ return [
         'beuser' => [
             'packagePath' => 'typo3/sysext/beuser/',
         ],
-        'context_help' => [
-            'packagePath' => 'typo3/sysext/context_help/',
-        ],
-        'cshmanual' => [
-            'packagePath' => 'typo3/sysext/cshmanual/',
-        ],
-        'documentation' => [
-            'packagePath' => 'typo3/sysext/documentation/',
-        ],
-        'bootstrapslider' => [
-            'packagePath' => 'typo3conf/ext/bootstrapslider/',
+        'extensionmanager' => [
+            'packagePath' => 'typo3/sysext/extensionmanager/',
         ],
         'felogin' => [
             'packagePath' => 'typo3/sysext/felogin/',
@@ -287,26 +258,17 @@ return [
         'impexp' => [
             'packagePath' => 'typo3/sysext/impexp/',
         ],
+        'info' => [
+            'packagePath' => 'typo3/sysext/info/',
+        ],
         'lowlevel' => [
             'packagePath' => 'typo3/sysext/lowlevel/',
         ],
-        'recordlist' => [
-            'packagePath' => 'typo3/sysext/recordlist/',
+        'redirects' => [
+            'packagePath' => 'typo3/sysext/redirects/',
         ],
-        'recycler' => [
-            'packagePath' => 'typo3/sysext/recycler/',
-        ],
-        'reports' => [
-            'packagePath' => 'typo3/sysext/reports/',
-        ],
-        'rte_ckeditor_image' => [
-            'packagePath' => 'typo3conf/ext/rte_ckeditor_image/',
-        ],
-        'scheduler' => [
-            'packagePath' => 'typo3/sysext/scheduler/',
-        ],
-        'sv' => [
-            'packagePath' => 'typo3/sysext/sv/',
+        'rsaauth' => [
+            'packagePath' => 'typo3/sysext/rsaauth/',
         ],
         'sys_note' => [
             'packagePath' => 'typo3/sysext/sys_note/',
@@ -320,17 +282,8 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
-        'redirects' => [
-            'packagePath' => 'typo3/sysext/redirects/',
-        ],
         'flux' => [
             'packagePath' => 'typo3conf/ext/flux/',
-        ],
-        'vhs' => [
-            'packagePath' => 'typo3conf/ext/vhs/',
-        ],
-        'dce' => [
-            'packagePath' => 'typo3conf/ext/dce/',
         ],
         'sitepackage' => [
             'packagePath' => 'typo3conf/ext/sitepackage/',
@@ -338,7 +291,6 @@ return [
     ],
     'version' => 5,
 ];
-
 " >> PackageStates.php
 
 touch ENABLE_INSTALL_TOOL
