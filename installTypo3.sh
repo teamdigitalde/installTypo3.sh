@@ -285,6 +285,9 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'dce' => [
+            'packagePath' => 'typo3conf/ext/dce/',
+        ],
         'flux' => [
             'packagePath' => 'typo3conf/ext/flux/',
         ],
