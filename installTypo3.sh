@@ -285,6 +285,9 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+		'rte_ckeditor_image' => [
+            'packagePath' => 'typo3conf/ext/rte_ckeditor_image/',
+        ],
         'dce' => [
             'packagePath' => 'typo3conf/ext/dce/',
         ],
