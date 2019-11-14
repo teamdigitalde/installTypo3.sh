@@ -339,7 +339,7 @@ cd ../
 mkdir flux
 cd flux
 git init > /dev/null
-git pull https://github.com/FluidTYPO3/flux/tree/master > /dev/null 2>&1
+git pull https://github.com/FluidTYPO3/flux/tree/9.2.0 > /dev/null 2>&1
 
 cd ../
 mkdir vhs
