@@ -336,12 +336,8 @@ git init > /dev/null
 git pull https://github.com/teamdigitalde/bootstrapslider > /dev/null 2>&1
 
 cd ../
-mkdir flux
-cd flux
-git init > /dev/null
-git pull https://github.com/FluidTYPO3/flux.git > /dev/null 2>&1
+git clone -b master https://github.com/FluidTYPO3/flux.git
 
-cd ../
 mkdir vhs
 cd vhs
 git init > /dev/null
