@@ -116,9 +116,13 @@ return [
             'offlineMode' => '0',
         ],
         'flux' => [
-            'compact' => '0',
+            'autoload' => '1',
             'debugMode' => '0',
+            'doktypes' => '0,1,4',
             'handleErrors' => '0',
+            'pagesLanguageConfigurationOverlay' => '0',
+            'plugAndPlay' => '0',
+            'plugAndPlayDirectory' => 'design',
         ],
         'rsaauth' => [
             'temporaryDirectory' => '',
